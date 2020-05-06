@@ -17,4 +17,9 @@ public class SampleController {
         log.info("Hello from sampleQuizlet!");
         return new Quizlet("OldQuizlet");
     }
+
+    @GetMapping("/sampleQuizletOAuth2")
+    public String sampleQuizletOAuth2() {
+        return "sampleQuizletOAuth2";
+    }
 }
