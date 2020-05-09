@@ -8,5 +8,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Quizlet {
+    private String id;
     private String quizletName;
+
+    public Quizlet(String quizletName) {
+        this.quizletName = quizletName;
+    }
 }

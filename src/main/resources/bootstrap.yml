@@ -3,6 +3,24 @@ server:
 spring:
   application:
     name: quizlet
+  zipkin:
+    enabled: false
+  cloud:
+    stream:
+      bindings:
+#          output is the name of your channel and maps to the Source.output() channel
+
+#        ------------- Using default channel "output"
+
+        output:
+          destination: quizletChangeQueue # name of the message queue
+          content-type: application/json
+
+        kafka:
+          binder: # location of kafka & zookeeper
+            zkNodes: localhost
+            brokers: localhost
+
 eureka:
   instance:
     #    In a container-based deployment (for example, Docker), containers will be
